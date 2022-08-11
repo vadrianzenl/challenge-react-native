@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styled from "styled-components";
+import NavBar from "../../components/NavBar/NavBar";
 
 const ImagesContainer= styled.div`
   text-align: center;
@@ -20,7 +21,7 @@ const Images = () => {
 
   useEffect(() => {
     handleLoadImages();
-  });
+  }, []);
 
   const handleLoadImages = () => {
     const items = Object.keys(localStorage);
@@ -35,10 +36,10 @@ const Images = () => {
 
   return (
     <ImagesContainer>
+      <NavBar />
       <h4>Images Page</h4>
       <hr />
       <ImagesWrapper>
-        {images.length}
         {images && images.map((image, index) => (
           <div key={index}>
             {image &&  <img alt="File" width={200} height={200} src={URL.createObjectURL(image)} /> }

@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import styled from 'styled-components';
+import NavBar from "../../components/NavBar/NavBar";
 
 const HomeContainer = styled.div`
   text-align: center;
@@ -61,6 +62,7 @@ const Home = () => {
 
   return (
     <HomeContainer>
+      <NavBar />
       <h4>Home Page</h4>
       <hr />
       <select value={type} onChange={(event) => setType(event.target.value)}>
